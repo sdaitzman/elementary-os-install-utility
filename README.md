@@ -11,6 +11,37 @@ Easy-to-use utility that installs Elementary OS on your Mac and helps you boot i
 ## Screenshot:
 ![screenshot](http://f.cl.ly/items/0x370S1h0U2X2U0K1r1u/Screen%20Shot%202014-08-16%20at%2010.24.31%20PM.png)
 
+## Technical Details:
+Elementary OS Install Utility is a Cocoa-Applescript App created using Xcode. It uses mostly shell scripts to perform its tasks.
+
+### Thumb drive burner:
+1. Prompts user to choose an ISO file
+2. Erases eosinstall directory then makes it again (just in case it got left behind)
+3. Converts ISO to IMG in eosinstall file
+4. Renames from DMG to IMG (Apple is weird sometimes)
+5. Prompts for thumb drive then asks Finder about all drives
+6. Lets user choose drive by name and uses ~~grep~~ magic to find /dev/rdiskn location of thumb drive
+7. Uses dd to flash IMG onto thumb drive
+8. Deletes IMG file and eosinstall folder
+9. :smile:
+
+### rEFInd Install:
+1. Tells you what it'll do
+2. Erases eosinstall directory then makes it again (just in case it got left behind)
+3. `curl`s rEFInd from sourceforge into eosinstall directory
+4. Unzips then deletes zip file
+5. Tells you rEFInd has been downloaded and unzipped
+6. Unzips rEFInd binary package
+7. Unmounts both common EFI System Partition mount points (`/Volumes/ESP` and `/Volumes/EFI`) in case they're already mounted
+8. Mounts EFI partition (disk0s1) to `/Volumes/EFI`
+9. Renames bootx64.efi in BOOT folder as refind_x64.efi, and BOOT folder as refind - this step is in case it's already installed. It will allow installations to be upgraded.
+10. Runs rEFInd install script with all drivers onto ESP partition
+11. Deletes rEFInd binary installer folder
+12. Renames refind folder as BOOT and refind_x64.efi as bootx64.efi. This step often reduces boot time on some EFI systems, namely most Macs, by ≈30-40 seconds.
+13. Deletes entire eosinstall folder
+14. Unmounts both common EFI System Partition mount points
+15. Tells the user it's finished
+
 ## What it does:
 This utility helps you install Elementary OS on a Mac. It installs rEFInd (an EFI boot picker) to the EFI System Partition, and burns a thumb drive with the Elementary OS installer.
 
