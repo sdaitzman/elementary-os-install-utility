@@ -10,14 +10,14 @@
 	<string>Elementary OS Install utility</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>381F72835FD20340ED4BE8B4F1F94E07B42F858D</key>
+		<key>742321CA278F88C3F577DF15627680F214520FC9</key>
 		<string>https://github.com/sdaitzman/elementary-os-install-utility.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Elementary OS Install utility/Elementary OS Install utility.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>381F72835FD20340ED4BE8B4F1F94E07B42F858D</key>
+		<key>742321CA278F88C3F577DF15627680F214520FC9</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>381F72835FD20340ED4BE8B4F1F94E07B42F858D</string>
+	<string>742321CA278F88C3F577DF15627680F214520FC9</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>381F72835FD20340ED4BE8B4F1F94E07B42F858D</string>
+			<string>742321CA278F88C3F577DF15627680F214520FC9</string>
 			<key>IDESourceControlWCCName</key>
 			<string>elementary-os-install-utility</string>
 		</dict>
