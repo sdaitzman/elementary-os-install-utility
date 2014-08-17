@@ -14,6 +14,11 @@ Easy-to-use utility that installs Elementary OS on your Mac and helps you boot i
 ## Building from source:
 Should support OOTB building from source using Xcode >4, and is tested to work with Xcode 5.1.1 on OS X 10.9.3 and 10.9.4 and with Xcode 6 Beta 5 on OS X Yosemite.
 
+## What it does:
+This utility helps you install Elementary OS on a Mac. It installs rEFInd (an EFI boot picker) to the EFI System Partition, and burns a thumb drive with the Elementary OS installer.
+
+You'll need an Elementary OS ISO from the Elementary OS [website](http://elementaryos.org) to install, and you'll need to make a FAT partition using Disk Utility. This will be documented in the greyed out button at the bottom of the app but instructions have not yet been written.
+
 ## Technical Details:
 Elementary OS Install Utility is a Cocoa-Applescript App created using Xcode. It uses mostly shell scripts to perform its tasks.
 
@@ -44,11 +49,6 @@ Elementary OS Install Utility is a Cocoa-Applescript App created using Xcode. It
 13. Deletes entire eosinstall folder
 14. Unmounts both common EFI System Partition mount points
 15. Tells the user it's finished :smile:
-
-## What it does:
-This utility helps you install Elementary OS on a Mac. It installs rEFInd (an EFI boot picker) to the EFI System Partition, and burns a thumb drive with the Elementary OS installer.
-
-You'll need an Elementary OS ISO from the Elementary OS [website](http://elementaryos.org) to install, and you'll need to make a FAT partition using Disk Utility. This will be documented in the greyed out button at the bottom of the app but instructions have not yet been written.
 
 ## Boring stuff:
 This tool is licensed under the file contained in LICENSE.md. The following non-legalese does not represent a contract and LICENSE.md takes priority:
