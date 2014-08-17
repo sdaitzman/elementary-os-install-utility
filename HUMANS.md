@@ -1,0 +1,23 @@
+/* TEAM */
+	Founder/creator, developer, designer, documentation-er: Sam Daitzman
+	Looking for help with project: yes
+	Twitter: @sdaitzman
+	Github: @sdaitzman
+	Codepen: @llamaswill
+	Email: samuel@daitzman.com
+	From: Boston, Massachusetts
+
+/* THANKS */
+	Inspiration, help with BOOT vs refind names: Avi Romanoff
+	Github: @aroman
+	
+	Some thumb drive burning code inspired by: Christopher Silvertooth
+	Website: http://musings.silvertooth.us
+
+	Testing: Carter McDivvit
+	
+	Elementary OS creators: Daniel Foré and the Elementary OS developers
+	
+	rEFInd developer: Roderick W. Smith
+	
+	Ubuntu developers: Everyone that developed Ubuntu
