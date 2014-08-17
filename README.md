@@ -40,7 +40,7 @@ Elementary OS Install Utility is a Cocoa-Applescript App created using Xcode. It
 12. Renames refind folder as BOOT and refind_x64.efi as bootx64.efi. This step often reduces boot time on some EFI systems, namely most Macs, by ≈30-40 seconds.
 13. Deletes entire eosinstall folder
 14. Unmounts both common EFI System Partition mount points
-15. Tells the user it's finished
+15. Tells the user it's finished :smile:
 
 ## What it does:
 This utility helps you install Elementary OS on a Mac. It installs rEFInd (an EFI boot picker) to the EFI System Partition, and burns a thumb drive with the Elementary OS installer.
