@@ -1,7 +1,7 @@
 :penguin: Elementary OS Install utility
 =============================
 
-Easy-to-use utility that installs Elementary OS on your Mac and helps you boot it
+Easy-to-use utility that installs [Elementary OS](http://elementaryos.org) on your Mac and helps you boot it
 
 ## Instructions:
 1. [Download](https://github.com/sdaitzman/elementary-os-install-utility/releases/download/3.2.0beta/Elementary-OS-Install-utility.app.zip)
