@@ -12,7 +12,7 @@ Easy-to-use utility that installs [Elementary OS](http://elementaryos.org) on yo
 ![screenshot](http://f.cl.ly/items/0x370S1h0U2X2U0K1r1u/Screen%20Shot%202014-08-16%20at%2010.24.31%20PM.png)
 
 ## Building from source:
-Should support OOTB building from source using Xcode >4, and is tested to work with Xcode 5.1.1 on OS X 10.9.3 and 10.9.4 and with Xcode 6 Beta 5 on OS X Yosemite.
+Should support OOTB building from source using Xcode 6 Beta 5 on OS X Yosemite or Mavericks most versions.
 
 ## What it does:
 This utility helps you install Elementary OS on a Mac. It installs rEFInd (an EFI boot picker) to the EFI System Partition, and burns a thumb drive with the Elementary OS installer.
