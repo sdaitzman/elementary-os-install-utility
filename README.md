@@ -19,6 +19,9 @@ This utility helps you install Elementary OS on a Mac. It installs rEFInd (an EF
 
 You'll need an Elementary OS ISO from the Elementary OS [website](http://elementaryos.org) to install, and you'll need to make a FAT partition using Disk Utility. This will be documented in the greyed out button at the bottom of the app but instructions have not yet been written.
 
+## Credits:
+See HUMANS.md
+
 ## Technical Details:
 Elementary OS Install Utility is a Cocoa-Applescript App created using Xcode. It uses mostly shell scripts to perform its tasks.
 

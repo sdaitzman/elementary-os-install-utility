@@ -14,6 +14,10 @@
 	Some thumb drive burning code inspired by: Christopher Silvertooth
 	Website: http://musings.silvertooth.us
 
+    Actual useful number code from: http://www.macosxautomation.com/applescript/sbrt/sbrt-02.html
+
+    getIntValue code from: http://macscripter.net/viewtopic.php?id=25830
+
 	Testing: Carter McDivvit
 	
 	Elementary OS creators: Daniel Foré and the Elementary OS developers
