@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6205" systemVersion="14A314h" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6205" systemVersion="14A329f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
-        <deployment defaultVersion="101000" identifier="macosx"/>
+        <deployment defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6205"/>
     </dependencies>
     <objects>
@@ -93,79 +93,28 @@
         </menu>
         <window title="Elementary OS Install Utility" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
-            <rect key="contentRect" x="335" y="390" width="719" height="417"/>
+            <rect key="contentRect" x="335" y="390" width="269" height="327"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="719" height="417"/>
+                <rect key="frame" x="0.0" y="-5" width="269" height="327"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k43-0g-mtR">
-                        <rect key="frame" x="0.0" y="40" width="204" height="214"/>
+                        <rect key="frame" x="58" y="173" width="153" height="134"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="1UE-ek-HFL"/>
                     </imageView>
-                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9YU-5f-aAF">
-                        <rect key="frame" x="127" y="83" width="572" height="306"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" borderStyle="border" alignment="center" drawsBackground="YES" id="6LF-pt-eaf">
-                            <font key="font" metaFont="system"/>
-                            <string key="title">This Utility will help you install Elementary OS on your Mac. To get started, you'll need an ISO file of Elementary OS. This can be downloaded for free from the Elementary OS website. This utility can also install rEFInd, a free EFI-based boot picker, to help you boot Elementary OS. You'll have to use Disk Utility to create a FAT partition to install Elementary OS to. This utility should also work with *buntu.</string>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" white="1" alpha="0.88" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aox-41-e9G">
-                        <rect key="frame" x="125" y="391" width="161" height="18"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Install Elementary OS" id="a2E-Qi-8oT">
-                            <font key="font" metaFont="systemBold" size="14"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vTR-7P-Ala">
-                        <rect key="frame" x="266" y="4" width="186" height="32"/>
-                        <buttonCell key="cell" type="push" title="Elementary OS Support" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sHg-dg-pp9">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="ButtonHandlerSupport:" target="Voe-Tx-rLC" id="J56-JW-bgJ"/>
-                        </connections>
-                    </button>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qy1-cG-gtO">
-                        <rect key="frame" x="300" y="112" width="367" height="51"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="679-Gc-oqh">
-                            <font key="font" metaFont="system"/>
-                            <string key="title">Helps you partition your Mac using Disk utility, prints out directions for what to do next, then restarts your Mac when you're ready</string>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cer-RQ-lru">
-                        <rect key="frame" x="300" y="187" width="367" height="37"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Downloads, extracts and installs rEFInd, an EFI boot picker that will help you boot Elementary OS" id="VNG-9N-u8V">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lQ8-h6-nZs">
-                        <rect key="frame" x="141" y="135" width="149" height="32"/>
-                        <buttonCell key="cell" type="push" title="Install Elementary" bezelStyle="rounded" alignment="center" enabled="NO" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Dy6-jp-FMa">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                    </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wxw-yu-RPb">
-                        <rect key="frame" x="141" y="196" width="149" height="32"/>
-                        <buttonCell key="cell" type="push" title="Install rEFInd" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="748-dy-u1T">
+                        <rect key="frame" x="48" y="113" width="173" height="32"/>
+                        <buttonCell key="cell" type="push" title="Install Elementary OS" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="748-dy-u1T">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="ButtonHandlerInstallRefind:" target="Voe-Tx-rLC" id="zpY-71-eAd"/>
+                            <action selector="ButtonHandlerInstall:" target="Voe-Tx-rLC" id="Uq2-vS-ldj"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2nD-f7-nnV">
-                        <rect key="frame" x="638" y="4" width="67" height="32"/>
+                        <rect key="frame" x="191" y="4" width="67" height="32"/>
                         <buttonCell key="cell" type="push" title="Quit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7x5-6U-5Ph">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -176,38 +125,29 @@
                             <action selector="ButtonHandlerQuit:" target="Voe-Tx-rLC" id="HZq-31-SCy"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="On7-jK-E5H">
-                        <rect key="frame" x="14" y="4" width="114" height="32"/>
-                        <buttonCell key="cell" type="push" title="rEFInd Docs" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QPx-dr-d3x">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="ButtonHandlerDocs:" target="Voe-Tx-rLC" id="tDZ-XG-TXZ"/>
-                        </connections>
-                    </button>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9es-dr-S8Z">
-                        <rect key="frame" x="141" y="256" width="149" height="32"/>
-                        <buttonCell key="cell" type="push" title="Burn a thumb drive" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="w8H-jK-pQj">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="ButtonHandlerMakeThumbDrive:" target="Voe-Tx-rLC" id="G4o-1T-vJE"/>
-                        </connections>
-                    </button>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lem-Kf-xVl">
-                        <rect key="frame" x="300" y="245" width="367" height="39"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Burn an Elementary OS Install thumb drive - you'll need an Elementary OS ISO file" id="shw-7Y-D8w">
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" id="5mv-5q-hma">
+                        <rect key="frame" x="30" y="40" width="208" height="60"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Save all your work, click the button and get a good book to read" id="U4F-w0-jHj">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vTR-7P-Ala">
+                        <rect key="frame" x="5" y="4" width="186" height="32"/>
+                        <buttonCell key="cell" type="push" title="Elementary OS Support" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sHg-dg-pp9">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="ButtonHandlerSupport:" target="Voe-Tx-rLC" id="J56-JW-bgJ"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <contentBorderThickness minY="40"/>
-            <point key="canvasLocation" x="600.5" y="327.5"/>
+            <point key="canvasLocation" x="-234.5" y="-993.5"/>
         </window>
     </objects>
     <resources>
