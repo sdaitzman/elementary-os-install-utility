@@ -19,22 +19,81 @@ script AppDelegate
         -- Insert code here to initialize your application before any files are opened
     end applicationWillFinishLaunching_
     
+    -- partitions the Mac with space for Elementary OS
+    on ButtonHandlerPartition_(sender)
+        partitionMac()
+    end ButtonHandlerPartition_
+    
+    -- Install or update rEFInd
+    on buttonHandlerInstallRefind_(sender)
+        display dialog "This will install the boot picker (or upgrade it in existing installations) - press \"OK\" to continue:"
+        installRefind()
+    end buttonHandlerInstallRefind_
+    
+    on ButtonHandlerMkThumbDrive_(sender)
+        display dialog "Insert your thumb drive and click \"OK\" - the thumb drive will be erased and its contents lost."
+        delay 5
+        -- make the thumb drive installer
+        mkThumbDriveInstaller()
+        display dialog "Finished! It is now safe to remove the thumb drive."
+    end ButtonHandlerMkThumbDrive_
+    
+    -- put installer on installer partition
+    on ButtonHandlerMkInstall_(sender)
+        display dialog "First, you'll need to choose the downloaded ISO file"
+        set isoFile to (choose file with prompt "Choose an Elementary OS ISO for conversion, then wait a while:" of type {"public.iso-image"})
+        do shell script "hdiutil mount " & POSIX path of isoFile
+        do shell script "cp -R /Volumes/elementary\\ OS/ /Volumes/EOSINSTALL/"
+        display dialog "Installer created!"
+        do shell script "diskutil unmount force /Volumes/elementary\\ OS"
+    end ButtonHandlerMkInstall_
+    
+    -- remove installer from installer partition
+    on ButtonHandlerRmInstall_(sender)
+        do shell script "rm -r /Volumes/EOSINSTALL/* &> /dev/null &" with administrator privileges
+        do shell script "rm -r /Volumes/EOSINSTALL/.* &> /dev/null &" with administrator privileges
+    end ButtonHandlerRmInstall_
+    
+    on ButtonHandlerSupport_(sender)
+        do shell script "open http://elementaryos.org/support"
+    end ButtonHandlerSupport_
+    
+    -- quit install utility
+    on ButtonHandlerQuit_(sender)
+        quit
+    end ButtonHandlerQuit_
+    
+    on applicationShouldTerminate_(sender)
+        -- Insert code here to do any housekeeping before your application quits
+        return current application's NSTerminateNow
+    end applicationShouldTerminate_
     
     
-    -- extract and do standard install of refind
     
-    on ButtonHandlerInstall_(sender)
-        # set elementarySpace to my getIntValue()
+    
+    
+    
+    
+    -- BEGIN HELPER FUNCTIONS
+    
+    -- make space for Elementary by partitioning
+    on partitionMac()
+        set elementarySpace to my getIntValue() * 1073741824
         
         tell application "Finder" to set diskCapacity to capacity of startup disk
-        tell application "Finder" to set diskFreeSpace to free space of startup disk
         
-        do shell script "say " & diskCapacity as number
+        -- current disk space - elementary space - a little over 2gb
+        set newMacSpace to number_to_string(diskCapacity - elementarySpace - 2147484648)
         
-        display dialog elementarySpace
+        do shell script "diskutil resizeVolume / " & newMacSpace  & "B 2 MS-DOS ELEMENTARY " & elementarySpace & "B MS-DOS EOSINSTALL 2G" with administrator privileges
         
-        display dialog "Insert your thumb drive and click \"OK\" - the thumb drive will be erased and its contents lost. Your computer will be prepared for the installation. This could take a while."
-        
+        display dialog "Finished!"
+        log "Mac has been partitioned"
+    end partitionMac
+    
+    
+    -- install bootpicker (rEFInd)
+    on installRefind()
         -- just in case script failed earlier (even though that has never happened) erase our directory
         do shell script "rm -rf ~/eosinstall" with administrator privileges
         
@@ -79,7 +138,10 @@ script AppDelegate
         do shell script "diskutil unmount /Volumes/ESP &> /dev/null &"
         
         log "rEFInd installed"
-        
+    end installRefind
+    
+    -- make thumb drive
+    on mkThumbDriveInstaller()
         tell application "Finder"
             try
                 set allDrives to the name of every disk
@@ -90,7 +152,7 @@ script AppDelegate
         end tell
         
         set selectedDrive to "driveForInstallerGoesHere"
-        set selectedDrive to {choose from list allDrives with prompt "Choose the drive for the Elementary installer:"} as text
+        set selectedDrive to {choose from list allDrives with prompt "Choose your thumb drive from the list:"} as text
         set selectedDrive to "\"" & selectedDrive & "\""
         
         # get the name of the ISO
@@ -116,36 +178,7 @@ script AppDelegate
         do shell script "dd if=/Users/" & userName & "/eosinstall/elementary.img of=" & devPath & " bs=1m" with administrator privileges
         do shell script "rm ~/eosinstall/elementary.img"
         do shell script "rm -rf ~/eosinstall"
-        
-        display dialog "Congratulations! You're ready to install Elementary OS. Press OK to print instructions"
-        
-        
-        
-    end ButtonHandlerInstall_
-    
-    on ButtonHandlerDocs_(sender)
-        do shell script "open http://www.rodsbooks.com/refind/"
-    end ButtonHandlerDocs_
-    
-    on ButtonHandlerSupport_(sender)
-        do shell script "open http://elementaryos.org/support"
-    end ButtonHandlerSupport_
-    
-    -- quit install utility
-    
-    on ButtonHandlerQuit_(sender)
-        quit
-    end ButtonHandlerQuit_
-    
-    
-    
-    on applicationShouldTerminate_(sender)
-        -- Insert code here to do any housekeeping before your application quits
-        return current application's NSTerminateNow
-    end applicationShouldTerminate_
-    
-    
-    -- BEGIN HELPER FUNCTIONS
+    end mkThumbDriveInstaller
     
     
     -- asks for integer
