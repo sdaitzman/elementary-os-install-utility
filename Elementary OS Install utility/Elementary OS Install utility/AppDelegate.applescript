@@ -26,8 +26,9 @@ script AppDelegate
     
     -- Install or update rEFInd
     on buttonHandlerInstallRefind_(sender)
-        display dialog "This will install the boot picker (or upgrade it in existing installations) - press \"OK\" to continue:"
+        display dialog "This will download and install the boot picker (or non-destructively upgrade it in existing installations) - press \"OK\" to continue:"
         installRefind()
+        display dialog "The boot picker has been installed"
     end buttonHandlerInstallRefind_
     
     on ButtonHandlerMkThumbDrive_(sender)
@@ -42,6 +43,7 @@ script AppDelegate
     on ButtonHandlerMkInstall_(sender)
         display dialog "First, you'll need to choose the downloaded ISO file"
         set isoFile to (choose file with prompt "Choose an Elementary OS ISO for conversion, then wait a while:" of type {"public.iso-image"})
+        do shell script "diskutil reformat /Volumes/EOSINSTALL/" with administrator privileges
         do shell script "hdiutil mount " & POSIX path of isoFile
         do shell script "cp -R /Volumes/elementary\\ OS/ /Volumes/EOSINSTALL/"
         display dialog "Installer created!"
@@ -50,8 +52,8 @@ script AppDelegate
     
     -- remove installer from installer partition
     on ButtonHandlerRmInstall_(sender)
-        do shell script "rm -r /Volumes/EOSINSTALL/* &> /dev/null &" with administrator privileges
-        do shell script "rm -r /Volumes/EOSINSTALL/.* &> /dev/null &" with administrator privileges
+        do shell script "diskutil reformat /Volumes/EOSINSTALL/" with administrator privileges
+        display dialog "Installer volume reformatted"
     end ButtonHandlerRmInstall_
     
     on ButtonHandlerSupport_(sender)
@@ -87,7 +89,7 @@ script AppDelegate
         
         do shell script "diskutil resizeVolume / " & newMacSpace  & "B 2 MS-DOS ELEMENTARY " & elementarySpace & "B MS-DOS EOSINSTALL 2G" with administrator privileges
         
-        display dialog "Finished!"
+        display dialog "Finished! Your Mac has been successfully partitioned for Elementary OS and the installer"
         log "Mac has been partitioned"
     end partitionMac
     
@@ -108,36 +110,38 @@ script AppDelegate
         
         -- clean up zip file
         do shell script "rm ~/eosinstall/refind.zip"
+        log "downloaded and unzipped refind"
         
-        -- unmount ESP then mount to a known location
+        -- unmount ESP
         do shell script "diskutil unmount /Volumes/EFI &> /dev/null &"
         do shell script "diskutil unmount /Volumes/ESP &> /dev/null &"
-        delay 3
-        do shell script "mkdir -p /Volumes/EFI"
-        do shell script "mount -t msdos /dev/disk0s1 /Volumes/EFI/" with administrator privileges
-        
-        -- if already installed, allows to be updated rather than messed up
-        do shell script "mv  /Volumes/EFI/EFI/BOOT/bootx64.efi /Volumes/EFI/EFI/BOOT/refind_x64.efi &> /dev/null &"
-        do shell script "mv /Volumes/EFI/EFI/BOOT /Volumes/EFI/EFI/refind &> /dev/null &"
+        log "unmounted ESP locations"
         
         -- installs rEFInd on ESP with all drivers
-        do shell script "~/eosinstall/refind-bin*/install.sh --esp --alldrivers" with administrator privileges
+        delay 3
+        do shell script "~/eosinstall/refind-bin*/install.sh --alldrivers --usedefault /dev/disk0s1" with administrator privileges
+        log "ran install script"
         
         -- removes refind install folder
         do shell script "rm -rf ~/eosinstall/refind-bin*"
         
-        -- moves to faster-booting location
-        do shell script "mv /Volumes/EFI/EFI/refind /Volumes/EFI/EFI/BOOT"
-        do shell script "mv /Volumes/EFI/EFI/BOOT/refind_x64.efi /Volumes/EFI/EFI/BOOT/bootx64.efi"
-        
         -- deletes entire install folder
         do shell script "rm -rf ~/eosinstall"
+        log "got rid of scratch directory"
         
-        -- unmount partition again
-        do shell script "diskutil unmount /Volumes/EFI &> /dev/null &"
-        do shell script "diskutil unmount /Volumes/ESP &> /dev/null &"
+        -- mount partition and erase 32-bit versions
+        do shell script "mkdir -p /Volumes/ESP"
+        do shell script "mount -t msdos /dev/disk0s1 /Volumes/ESP" with administrator privileges
+        do shell script "rm /Volumes/ESP/EFI/BOOT/bootia32.efi" with administrator privileges
+        do shell script "rm -rf /Volumes/ESP/EFI/BOOT/drivers_ia32/" with administrator privileges
+        log "erased 32-bit rEFInd"
         
-        log "rEFInd installed"
+        -- bless rEFInd and unmount
+        do shell script "bless --mount /Volumes/ESP --setBoot --file /Volumes/ESP/EFI/BOOT/bootx64.efi" with administrator privileges
+        do shell script "diskutil unmount /Volumes/ESP"
+        
+        
+        log "unmounted ESP - rEFInd installed and blessed"
     end installRefind
     
     -- make thumb drive
