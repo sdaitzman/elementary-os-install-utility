@@ -93,10 +93,10 @@
         </menu>
         <window title="Elementary OS Install Utility" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
-            <rect key="contentRect" x="335" y="390" width="737" height="358"/>
+            <rect key="contentRect" x="335" y="390" width="737" height="453"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="737" height="358"/>
+                <rect key="frame" x="0.0" y="-1" width="737" height="453"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k43-0g-mtR">
@@ -104,7 +104,7 @@
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="1UE-ek-HFL"/>
                     </imageView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="5mv-5q-hma">
-                        <rect key="frame" x="142" y="52" width="575" height="278"/>
+                        <rect key="frame" x="142" y="50" width="575" height="375"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" borderStyle="border" alignment="center" drawsBackground="YES" id="U4F-w0-jHj">
                             <font key="font" metaFont="system"/>
@@ -114,7 +114,7 @@
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" id="onk-0h-azL">
-                        <rect key="frame" x="148" y="197" width="152" height="32"/>
+                        <rect key="frame" x="148" y="209" width="152" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Install Boot picker" bezelStyle="rounded" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bXr-Vo-56p">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -125,7 +125,7 @@
                         </connections>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="6Pw-2r-2Ff">
-                        <rect key="frame" x="140" y="327" width="216" height="25"/>
+                        <rect key="frame" x="140" y="422" width="216" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Install Elementary OS" id="IpK-CO-iFM">
                             <font key="font" metaFont="systemBold"/>
@@ -145,18 +145,8 @@
                             <action selector="ButtonHandlerQuit:" target="Voe-Tx-rLC" id="HZq-31-SCy"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vTR-7P-Ala">
-                        <rect key="frame" x="14" y="4" width="186" height="32"/>
-                        <buttonCell key="cell" type="push" title="Elementary OS Support" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sHg-dg-pp9">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="ButtonHandlerSupport:" target="Voe-Tx-rLC" id="J56-JW-bgJ"/>
-                        </connections>
-                    </button>
                     <button verticalHuggingPriority="750" id="3fP-3A-Y9N">
-                        <rect key="frame" x="148" y="101" width="127" height="32"/>
+                        <rect key="frame" x="148" y="113" width="127" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Erase installer" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qbL-FQ-7me">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -167,7 +157,7 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" id="tOo-7v-XvU">
-                        <rect key="frame" x="148" y="245" width="92" height="32"/>
+                        <rect key="frame" x="148" y="257" width="92" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Partition" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="olC-ts-5Gr">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -178,7 +168,7 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" id="UOp-SQ-D35">
-                        <rect key="frame" x="148" y="149" width="117" height="32"/>
+                        <rect key="frame" x="148" y="161" width="117" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Add installer" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vOZ-gV-sYc">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -189,14 +179,14 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wxw-yu-RPb">
-                        <rect key="frame" x="346" y="4" width="167" height="32"/>
+                        <rect key="frame" x="285" y="4" width="167" height="32"/>
                         <buttonCell key="cell" type="push" title="View full instructions" bezelStyle="rounded" alignment="center" enabled="NO" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="748-dy-u1T">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" id="bOO-9o-A7p">
-                        <rect key="frame" x="312" y="245" width="393" height="34"/>
+                        <rect key="frame" x="312" y="257" width="393" height="34"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Partitions your Mac with space for Elementary OS and the Elementary OS Installer. You should only do this once" id="gMq-xQ-lFV">
                             <font key="font" metaFont="system"/>
@@ -205,7 +195,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" id="dzb-M2-3MO">
-                        <rect key="frame" x="312" y="197" width="393" height="34"/>
+                        <rect key="frame" x="312" y="209" width="393" height="34"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Installs a tool to let you choose whether to boot OS X or Elementary OS each time you start your Mac" id="rEF-JZ-sAo">
                             <font key="font" metaFont="system"/>
@@ -214,7 +204,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" id="DVH-W6-O4z">
-                        <rect key="frame" x="312" y="149" width="393" height="34"/>
+                        <rect key="frame" x="312" y="161" width="393" height="34"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Adds the installer to the partition created in the first step - you'll need an Elementary OS ISO file" id="f8C-gb-ltS">
                             <font key="font" metaFont="system"/>
@@ -223,7 +213,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" id="fwO-3w-Pqy">
-                        <rect key="frame" x="312" y="101" width="393" height="34"/>
+                        <rect key="frame" x="312" y="113" width="393" height="34"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Removes the installer created in the previous step so you don't see it each time you boot your Mac" id="E43-P4-6V0">
                             <font key="font" metaFont="system"/>
@@ -232,7 +222,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" id="FXv-yj-Mqz">
-                        <rect key="frame" x="312" y="65" width="393" height="17"/>
+                        <rect key="frame" x="312" y="74" width="393" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Prints out instructions about what to do next" id="1PU-Ak-hAc">
                             <font key="font" metaFont="system"/>
@@ -241,17 +231,47 @@
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" id="0O1-GB-thV">
-                        <rect key="frame" x="148" y="56" width="145" height="32"/>
+                        <rect key="frame" x="148" y="65" width="145" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Print Instructions" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JFh-OD-up7">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
+                    <button verticalHuggingPriority="750" id="BPC-lw-voi">
+                        <rect key="frame" x="148" y="336" width="102" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Full install" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4jD-gu-siC">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="ButtonHandlerInstallAll:" target="Voe-Tx-rLC" id="UIz-J8-IUa"/>
+                        </connections>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" id="RdK-BH-c5R">
+                        <rect key="frame" x="312" y="336" width="393" height="34"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Fully sets up the dual-boot, doing all of the below steps in sequence. Only useful if you've never run any steps before" id="lRo-Yu-qPl">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vTR-7P-Ala">
+                        <rect key="frame" x="14" y="4" width="90" height="32"/>
+                        <buttonCell key="cell" type="push" title="Support" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sHg-dg-pp9">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="ButtonHandlerSupport:" target="Voe-Tx-rLC" id="J56-JW-bgJ"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <contentBorderThickness minY="40"/>
-            <point key="canvasLocation" x="-102.5" y="-1028"/>
+            <point key="canvasLocation" x="79.5" y="-983.5"/>
         </window>
         <button verticalHuggingPriority="750" id="03N-D0-6uS">
             <rect key="frame" x="0.0" y="0.0" width="82" height="32"/>

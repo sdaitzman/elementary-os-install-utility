@@ -19,6 +19,18 @@ script AppDelegate
         -- Insert code here to initialize your application before any files are opened
     end applicationWillFinishLaunching_
     
+    
+    
+    -- all of the below
+    on ButtonHandlerInstallAll_(sender)
+        display dialog "This Utility will set up your computer to boot both Elementary OS and OS X. Click OK to begin!"
+        partitionMac()
+        installRefind()
+        mkFrugalInstaller()
+        display dialog "It's now safe to reboot your computer and install Elementary OS - click OK to print instructions"
+        printInstructions()
+    end ButtonHandlerInstallAll_
+    
     -- partitions the Mac with space for Elementary OS
     on ButtonHandlerPartition_(sender)
         partitionMac()
@@ -26,11 +38,10 @@ script AppDelegate
     
     -- Install or update rEFInd
     on buttonHandlerInstallRefind_(sender)
-        display dialog "This will download and install the boot picker (or non-destructively upgrade it in existing installations) - press \"OK\" to continue:"
         installRefind()
-        display dialog "The boot picker has been installed"
     end buttonHandlerInstallRefind_
     
+    -- DEPRECATED: creates a thumb drive to install
     on ButtonHandlerMkThumbDrive_(sender)
         display dialog "Insert your thumb drive and click \"OK\" - the thumb drive will be erased and its contents lost."
         delay 5
@@ -39,15 +50,9 @@ script AppDelegate
         display dialog "Finished! It is now safe to remove the thumb drive."
     end ButtonHandlerMkThumbDrive_
     
-    -- put installer on installer partition
+    -- put installer on installer partition created in other step
     on ButtonHandlerMkInstall_(sender)
-        display dialog "First, you'll need to choose the downloaded ISO file"
-        set isoFile to (choose file with prompt "Choose an Elementary OS ISO for conversion, then wait a while:" of type {"public.iso-image"})
-        do shell script "diskutil reformat /Volumes/EOSINSTALL/" with administrator privileges
-        do shell script "hdiutil mount " & POSIX path of isoFile
-        do shell script "cp -R /Volumes/elementary\\ OS/ /Volumes/EOSINSTALL/"
-        display dialog "Installer created!"
-        do shell script "diskutil unmount force /Volumes/elementary\\ OS"
+        mkFrugalInstaller()
     end ButtonHandlerMkInstall_
     
     -- remove installer from installer partition
@@ -56,6 +61,8 @@ script AppDelegate
         display dialog "Installer volume reformatted"
     end ButtonHandlerRmInstall_
     
+    
+    -- open Elementary OS support page
     on ButtonHandlerSupport_(sender)
         do shell script "open http://elementaryos.org/support"
     end ButtonHandlerSupport_
@@ -67,10 +74,9 @@ script AppDelegate
     
     on applicationShouldTerminate_(sender)
         -- Insert code here to do any housekeeping before your application quits
+        do shell script "rm -rf ~/eosinstall"
         return current application's NSTerminateNow
     end applicationShouldTerminate_
-    
-    
     
     
     
@@ -89,13 +95,14 @@ script AppDelegate
         
         do shell script "diskutil resizeVolume / " & newMacSpace  & "B 2 MS-DOS ELEMENTARY " & elementarySpace & "B MS-DOS EOSINSTALL 2G" with administrator privileges
         
-        display dialog "Finished! Your Mac has been successfully partitioned for Elementary OS and the installer"
+        display dialog "Your Mac has been successfully partitioned for Elementary OS and the Elementary OS installer"
         log "Mac has been partitioned"
     end partitionMac
     
-    
     -- install bootpicker (rEFInd)
     on installRefind()
+        display dialog "Click OK to install the boot picker or upgrade it if it's already installed"
+        
         -- just in case script failed earlier (even though that has never happened) erase our directory
         do shell script "rm -rf ~/eosinstall" with administrator privileges
         
@@ -140,6 +147,7 @@ script AppDelegate
         do shell script "bless --mount /Volumes/ESP --setBoot --file /Volumes/ESP/EFI/BOOT/bootx64.efi" with administrator privileges
         do shell script "diskutil unmount /Volumes/ESP"
         
+        display dialog "The boot picker has been installed and is up-to-date!"
         
         log "unmounted ESP - rEFInd installed and blessed"
     end installRefind
@@ -184,6 +192,21 @@ script AppDelegate
         do shell script "rm -rf ~/eosinstall"
     end mkThumbDriveInstaller
     
+    -- make frugal install
+    on mkFrugalInstaller()
+        display dialog "Choose the downloaded ISO file to create the installer"
+        set isoFile to (choose file with prompt "Choose an Elementary OS ISO, then wait a while:" of type {"public.iso-image"})
+        do shell script "diskutil reformat /Volumes/EOSINSTALL/" with administrator privileges
+        do shell script "hdiutil mount " & POSIX path of isoFile
+        do shell script "cp -R /Volumes/elementary\\ OS/ /Volumes/EOSINSTALL/"
+        display dialog "Installer created!"
+        do shell script "diskutil unmount force /Volumes/elementary\\ OS"
+    end mkFrugalInstaller
+    
+    -- print complete instructions
+    on printInstructions()
+        
+    end printInstructions
     
     -- asks for integer
     -- credit to http://macscripter.net/viewtopic.php?id=25830
@@ -230,6 +253,7 @@ script AppDelegate
         end if
     end getIntValue
     
+
     -- I am displaying error messages to the user
     on dsperrmsg(errmsg, errnum)
         tell me
