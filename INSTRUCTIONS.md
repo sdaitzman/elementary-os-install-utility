@@ -18,4 +18,4 @@
 4.  Wait; this could take a while, do not stop or restart until the operation is complete.
 5.  Choose an ISO file downloaded from the [Elementary OS website](http://elementaryos.org) - the version must be at least Freya (0.3) which, as of this writing, is in beta
 6.  Click "OK" and restart your computer - you'll see the boot picker on startup
-7.  Press "ESC" 
+7.  Press "ESC" and use the arrow keys to select the icon with a small external indicator on it
