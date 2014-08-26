@@ -1,29 +1,22 @@
 # Elementary OS Install utility
 
-Easy-to-use utility that installs [Elementary OS][] on your Mac and
-helps you boot it. This documentation is for beta 6.0.1
+Easy-to-use utility that installs [Elementary OS][] on your Mac and helps you boot it. This documentation is for beta 6.0.1
 
-![][]
+![Screenshot](http://cl.ly/image/0c3Q2a2u2Y1y/Screen%20Shot%202014-08-26%20at%2012.15.19%20PM.png)
 
 ## Instructions:
 
 ### I make a number of assumptions about your Mac
 
-1.  I assume it’s fairly recent, with a core-i3/i5/i7 processor (64-bit
-    EFI only) - hackintosh not officially supported
+1.  I assume it’s fairly recent, with a core-i3/i5/i7 processor (64-bit EFI only) - hackintosh not officially supported
 
-2.  I assume you do not have Filevault or Bootcamp turned on. If you do,
-    this app will work but you’ll probably be unable to boot without
-    repairs.
+2.  I assume you do not have Filevault or Bootcamp turned on. If you do, this app will work but you’ll probably be unable to boot without repairs.
 
-3.  I assume your Mac’s low-level partition setup is relatively
-    standard. If you haven’t gone far out of your way to change it, it
-    is. I assume your ESP is at /dev/disk0s1, and you have at least one
-    Mac partition.
+3.  I assume your Mac’s low-level partition setup is relatively standard. If you haven’t gone far out of your way to change it, it is. I assume your ESP is at /dev/disk0s1, and you have at least one Mac partition.
 
 #### Installation:
 
-1.  [Download][] the app and open it
+1.  [Download](http://cl.ly/3Y022Q1b3E2m/download/Elementary%20OS%20Install%20utility.app.zip) the app and open it
 
 2.  Click “Full install” and click OK to get started, then enter an
     admin name and password
@@ -60,7 +53,7 @@ while booting, boot into OS X, open this app and run this step again.
 #### Add installer
 
 You’ll need an Elementary OS ISO file downloaded from the [Elementary
-OS][] website. The ISO file must be at least version Freya (0.3). This
+OS](http://elementaryos.org) website. The ISO file must be at least version Freya (0.3). This
 step must be run after partitioning; it will put the installer onto the
 Elementary OS installer partition.
 
@@ -97,7 +90,3 @@ some changes. You absolutely may not sell this on its own. By using this
 project you surrender your immortal souls, now and forevermore, to Me
 and Me alone. They shall be claimable within one week of notification by
 Me or any divine or mortal representative of Me.
-
-  [Elementary OS]: http://elementaryos.org
-  []: http://cl.ly/image/0c3Q2a2u2Y1y/Screen%20Shot%202014-08-26%20at%2012.15.19%20PM.png
-  [Download]: http://cl.ly/3Y022Q1b3E2m/download/Elementary%20OS%20Install%20utility.app.zip
