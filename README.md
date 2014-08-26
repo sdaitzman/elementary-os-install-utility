@@ -3,7 +3,8 @@
 Easy-to-use utility that installs [Elementary OS][] on your Mac and helps you boot it. This documentation is for beta 6.0.1
 
 ![Screenshot](http://cl.ly/image/0c3Q2a2u2Y1y/Screen%20Shot%202014-08-26%20at%2012.15.19%20PM.png)
-
+## Instructions
+See [INSTRUCTIONS.md](INSTRUCTIONS.md)
 ## App Guide:
 
 Elementary OS Install Utility is divided into four main functions. These
