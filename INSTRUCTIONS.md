@@ -7,6 +7,7 @@
 2.  I assume you do not have Filevault or Bootcamp turned on. If you do, this app will work but you’ll probably be unable to boot without repairs.
 
 3.  I assume your Mac’s low-level partition setup is relatively standard. If you haven’t gone far out of your way to change it, it is. I assume your ESP is at /dev/disk0s1, and you have at least one Mac partition.
+
 ## Installation:
 
 1.  [Download](http://cl.ly/3Y022Q1b3E2m/download/Elementary%20OS%20Install%20utility.app.zip) the app and open it
