@@ -11,9 +11,10 @@
 
 1.  [Download](http://cl.ly/3Y022Q1b3E2m/download/Elementary%20OS%20Install%20utility.app.zip) the app and open it
 
-2.  Click “Full install” and click OK to get started, then enter an
-    admin name and password
+2.  Click “Full install” and click OK to get started, then enter an admin name and password
 
-3.  Choose how much space to give Elementary OS in GB (Gigabytes) -
-    slightly more than this much will be lost from your Mac and given to
-    Elementary OS
+3.  Choose how much space to give Elementary OS in GB (Gigabytes) - slightly more than this much will be lost from your Mac and given to Elementary OS
+4.  Wait; this could take a while, do not stop or restart until the operation is complete.
+5.  Choose an ISO file downloaded from the [Elementary OS website](http://elementaryos.org) - the version must be at least Freya (0.3) which, as of this writing, is in beta
+6.  Click "OK" and restart your computer - you'll see the boot picker on startup
+7.  Press "ESC" 
