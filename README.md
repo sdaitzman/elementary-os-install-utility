@@ -99,5 +99,5 @@ and Me alone. They shall be claimable within one week of notification by
 Me or any divine or mortal representative of Me.
 
   [Elementary OS]: http://elementaryos.org
-  []: http://cl.ly/image/0x0Y2F1y2A2s/download/Screen%20Shot%202014-08-25%20at%207.37.17%20PM.png
+  []: http://cl.ly/image/0c3Q2a2u2Y1y/Screen%20Shot%202014-08-26%20at%2012.15.19%20PM.png
   [Download]: http://cl.ly/3Y022Q1b3E2m/download/Elementary%20OS%20Install%20utility.app.zip
