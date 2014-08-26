@@ -11,19 +11,13 @@ helps you boot it. This documentation is for beta 6.0.0
 
 1.  I assume it’s fairly recent, with an Intel core-i3/i5/i7 processor
 
-2.  I assume you do not have Bootcamp. If you do, this app will work but
-    you’ll be unable to boot into Bootcamp without repairs.
+2.  I assume you do not have Filevault or Bootcamp. If you do, this app
+    will work but you’ll be unable to boot without repairs.
 
-3.  I assume you have backups of your computer
-
-4.  I assume you don’t have filevault on. If you do, this app will work
-    but only with additional configuration which is not officially
-    supported
-
-5.  I assume your Mac’s low-level partition setup is relatively
+3.  I assume your Mac’s low-level partition setup is relatively
     standard. If you haven’t gone far out of your way to change it, it
     is. I assume your ESP is at /dev/disk0s1, and you have at least one
-    Mac partition with enough space that you’re willing to shrink it.
+    Mac partition.
 
 #### Installation:
 
