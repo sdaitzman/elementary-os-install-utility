@@ -3,6 +3,8 @@
 Easy-to-use utility that installs [Elementary OS][] on your Mac and
 helps you boot it. This documentation is for beta 6.0.0
 
+![][]
+
 ## Instructions:
 
 ### I make a number of assumptions about your Mac
@@ -33,8 +35,6 @@ helps you boot it. This documentation is for beta 6.0.0
 3.  Choose how much space to give Elementary OS in GB (Gigabytes) -
     slightly more than this much will be lost from your Mac and given to
     Elementary OS
-
-4.  
 
 ## App Guide:
 
@@ -74,10 +74,6 @@ This step will remove the installer created in the “Add installer” step
 and format the partition so you don’t see the option to install
 Elementary OS every time you turn on your Mac.
 
-## Screenshot:
-
-![][]
-
 ## Building from source:
 
 Should support OOTB building from source using Xcode ≥6
@@ -111,5 +107,5 @@ and Me alone. They shall be claimable within one week of notification by
 Me or any divine or mortal representative of Me.
 
   [Elementary OS]: http://elementaryos.org
-  [Download]: http://cl.ly/3Y022Q1b3E2m/download/Elementary%20OS%20Install%20utility.app.zip
   []: http://cl.ly/image/0x0Y2F1y2A2s/download/Screen%20Shot%202014-08-25%20at%207.37.17%20PM.png
+  [Download]: http://cl.ly/3Y022Q1b3E2m/download/Elementary%20OS%20Install%20utility.app.zip
