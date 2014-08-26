@@ -1,4 +1,4 @@
-# :penguin: Elementary OS Install utility
+# Elementary OS Install utility
 
 Easy-to-use utility that installs [Elementary OS][] on your Mac and
 helps you boot it. This documentation is for beta 6.0.1
