@@ -1,7 +1,7 @@
 # :penguin: Elementary OS Install utility
 
 Easy-to-use utility that installs [Elementary OS][] on your Mac and
-helps you boot it. This documentation is for beta 6.0.0
+helps you boot it. This documentation is for beta 6.0.1
 
 ![][]
 
@@ -9,10 +9,12 @@ helps you boot it. This documentation is for beta 6.0.0
 
 ### I make a number of assumptions about your Mac
 
-1.  I assume it’s fairly recent, with an Intel core-i3/i5/i7 processor
+1.  I assume it’s fairly recent, with a core-i3/i5/i7 processor (64-bit
+    EFI only) - hackintosh not officially supported
 
-2.  I assume you do not have Filevault or Bootcamp. If you do, this app
-    will work but you’ll be unable to boot without repairs.
+2.  I assume you do not have Filevault or Bootcamp turned on. If you do,
+    this app will work but you’ll probably be unable to boot without
+    repairs.
 
 3.  I assume your Mac’s low-level partition setup is relatively
     standard. If you haven’t gone far out of your way to change it, it
@@ -71,10 +73,6 @@ Elementary OS every time you turn on your Mac.
 ## Building from source:
 
 Should support OOTB building from source using Xcode ≥6
-
-## What it does:
-
-Installs [Elementary OS][]
 
 ## Credits:
 

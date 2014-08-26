@@ -72,11 +72,15 @@ script AppDelegate
 		do shell script "open http://elementaryos.org/support"
 	end ButtonHandlerSupport_
 	
+	-- print instructions and app guide
+	on ButtonHandlerPrintInstructions_(sender)
+		printInstructions()
+	end ButtonHandlerPrintInstructions_
+	
 	-- quit install utility
 	on ButtonHandlerQuit_(sender)
 		quit
 	end ButtonHandlerQuit_
-	
 	on applicationShouldTerminate_(sender)
 		-- Insert code here to do any housekeeping before your application quits
 		do shell script "rm -rf ~/eosinstall"
@@ -204,7 +208,7 @@ script AppDelegate
 		
 	-- print complete instructions
 	on printInstructions()
-			
+		
 	end printInstructions
 		
 		
