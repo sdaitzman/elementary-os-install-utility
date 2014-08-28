@@ -14,7 +14,6 @@ This file references Install Elementary OS Utility version 6.0.1
 2. [Download](http://cl.ly/3Y022Q1b3E2m/download/Elementary%20OS%20Install%20utility.app.zip) the app and open it
 
 3.  Click “Full install” and click OK to get started, then enter an admin name and password
-
 4.  Choose how much space to give Elementary OS in GB (Gigabytes) - slightly more than this much will be lost from your Mac and given to Elementary OS
 5.  Wait; this could take a while, do not stop or restart until the operation is complete.
 6.  Choose an ISO file downloaded from the [Elementary OS website](http://elementaryos.org) - the version must be at least Freya (0.3) which, as of this writing, is in beta
@@ -34,4 +33,4 @@ This file references Install Elementary OS Utility version 6.0.1
 
 ## Troubleshooting
 - If the boot picker stops showing up (e.g. after updating), launch the app again and click "Install Boot picker" - it should fix this
-- If your computer cannot connect to the internet, use a wired connection or look for drivers. On many Macs, the bcmwl-kernel-source package will fix this. If you still have the installer on the install partition, you can use Files on Elementary to open the "EOSINSTALL" partition and navigate to pool>restricted>b>bcmwl and open the .deb file inside - you can add the partition again using the "Add installer" option in Install Elementary OS Utility
+- If your computer cannot connect to the internet, use a wired connection or look for drivers. On many Macs, the bcmwl-kernel-source package will fix this - it depends on the DKMS package. If you still have the installer on the install partition, you can use Files on Elementary to open the "EOSINSTALL" partition and navigate to pool>main>d>dkms and open the .deb file inside. Install it, then do the same for the .deb file inside pool>restricted>b>bcmwl - you can add the installer again using the "Add installer" option in Install Elementary OS Utility if you've deleted it
