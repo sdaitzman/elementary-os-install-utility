@@ -1,5 +1,5 @@
 # Instructions:
-This file references Install Elementary OS Utility version 6.0.1
+***This file references Install Elementary OS Utility version 6.0.1***
 ## Assumptions about your Mac
 
 Your Mac must be fairly recent, with a core-i3/i5/i7 processor (64-bit EFI only). Hackintosh, Filevault, and Bootcamp are not officially supported - though Filevault and Bootcamp will work with additional setup.
