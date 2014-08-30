@@ -2,11 +2,7 @@
 This file references Install Elementary OS Utility version 6.0.1
 ## Assumptions about your Mac
 
-1.  I assume it’s fairly recent, with a core-i3/i5/i7 processor (64-bit EFI only) - hackintosh not officially supported
-
-2.  I assume you do not have Filevault or Bootcamp turned on. If you do, this app will work but you’ll probably be unable to boot without repairs.
-
-3.  I assume your Mac’s low-level partition setup is relatively standard. If you haven’t gone far out of your way to change it, it is. I assume your ESP is at /dev/disk0s1, and you have at least one Mac partition.
+Your Mac must be fairly recent, with a core-i3/i5/i7 processor (64-bit EFI only). Hackintosh, Filevault, and Bootcamp are not officially supported - though Filevault and Bootcamp will work with additional setup.
 
 ## Installation:
 
@@ -20,10 +16,10 @@ This file references Install Elementary OS Utility version 6.0.1
 7. Click "OK" and restart your computer - you'll see the boot picker on startup
 8. Press "ESC" and use the arrow keys to select the icon with the label "Boot EFI\BOOT\grubx64.efi" then select "Try Elementary OS without installing" and press enter
 9. Click "Applications" in the top left and type "Terminal" then press enter. Type "`$ ubiquity -b`" into the Terminal and press enter (the dollar sign should not be typed; it just means it's for entering into a Terminal)
-10. Click "Continue" then check "Install this third-party software." This will include closed-source software to allow you to play media files
+10. Click "Continue" then check "Install this third-party software." This will include closed-source software to allow you to play media files. You do not need to connect to a network.
 11. Continue again and choose the disk you created earlier. It will be formatted fat32 with very little space used; it's probably at /dev/sda3 or /dev/sda4
 12. Click "Change" in the bottom left and select "Use as: Ext4 journaling filesystem," check "Format the partition" and set the mount point to "/" then click "OK" and "Continue" if prompted
-13. Click "Install now," select your time zone and keyboard layout (which should be auto-detected)
+13. Click "Install now," ignoring any warnings about swap space, and select your time zone and keyboard layout (which should be auto-detected)
 14. Fill out the prompts for name, username, password, etc. then continue
 15. After installation is complete, click "Restart now"
 16. Pray
@@ -33,4 +29,6 @@ This file references Install Elementary OS Utility version 6.0.1
 
 ## Troubleshooting
 - If the boot picker stops showing up (e.g. after updating), launch the app again and click "Install Boot picker" - it should fix this
-- If your computer cannot connect to the internet, use a wired connection or look for drivers. On many Macs, the bcmwl-kernel-source package will fix this - it depends on the DKMS package. If you still have the installer on the install partition, you can use Files on Elementary to open the "EOSINSTALL" partition and navigate to pool>main>d>dkms and open the .deb file inside. Install it, then do the same for the .deb file inside pool>restricted>b>bcmwl - you can add the installer again using the "Add installer" option in Install Elementary OS Utility if you've deleted it
+- If your computer cannot connect to the internet, use a wired connection or look for drivers. On many Macs, the bcmwl-kernel-source package will fix this - it depends on the DKMS package. If you still have the installer on the install partition, you can use Files on Elementary to open the "EOSINSTALL" partition and navigate to pool>main>d>dkms and open the .deb file inside. Install it, then do the same for the .deb file inside pool>restricted>b>bcmwl - You can add the installer again using the "Add installer" option in Install Elementary OS Utility if you've deleted it
+- If your computer fails to restart from Elementary OS, hold down the power button for five seconds to force a shutdown - this is a known bug with a fix being worked on
+- If you run into any other issues, please report them! Email samuel@daitzman.com or go to http://github.com/sdaitzman/elementary-os-install-utility and click issues on the right hand side
