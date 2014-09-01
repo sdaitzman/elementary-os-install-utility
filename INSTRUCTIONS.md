@@ -29,6 +29,5 @@ Your Mac must be fairly recent, with a core-i3/i5/i7 processor (64-bit EFI only)
 
 ## Troubleshooting
 - If the boot picker stops showing up (e.g. after updating), launch the app again and click "Install Boot picker" - it should fix this
-- If your computer cannot connect to the internet, use a wired connection or look for drivers. On many Macs, the bcmwl-kernel-source package will fix this - it depends on the DKMS package. If you still have the installer on the install partition, you can use Files on Elementary to open the "EOSINSTALL" partition and navigate to pool>main>d>dkms and open the .deb file inside. Install it, then do the same for the .deb file inside pool>restricted>b>bcmwl - You can add the installer again using the "Add installer" option in Install Elementary OS Utility if you've deleted it
 - If your computer fails to restart from Elementary OS, hold down the power button for five seconds to force a shutdown - this is a known bug with a fix being worked on
 - If you run into any other issues, please report them! Email samuel@daitzman.com or go to http://github.com/sdaitzman/elementary-os-install-utility and click issues on the right hand side
