@@ -1,5 +1,4 @@
 # Instructions:
-***This file references Install Elementary OS Utility version 6.0.1***
 ## Assumptions about your Mac
 
 Your Mac must be fairly recent, with a core-i3/i5/i7 processor (64-bit EFI only). Hackintosh, Filevault, and Bootcamp are not officially supported - though Filevault and Bootcamp will work with additional setup.
@@ -31,3 +30,6 @@ Your Mac must be fairly recent, with a core-i3/i5/i7 processor (64-bit EFI only)
 - If the boot picker stops showing up (e.g. after updating), launch the app again and click "Install Boot picker" - it should fix this
 - If your computer fails to restart from Elementary OS, hold down the power button for five seconds to force a shutdown - this is a known bug with a fix being worked on
 - If you run into any other issues, please report them! Email samuel@daitzman.com or go to http://github.com/sdaitzman/elementary-os-install-utility and click issues on the right hand side
+
+
+This file references Install Elementary OS Utility version 6.0.1
