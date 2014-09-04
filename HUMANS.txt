@@ -25,3 +25,7 @@
 	rEFInd developer: Roderick W. Smith
 	
 	Ubuntu developers: Everyone that developed Ubuntu
+
+	Markdown editor: Mou
+
+	Minimal markdown editor: iA Writer

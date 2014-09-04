@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6206.9" systemVersion="14A343f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1070" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6206.8"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6206.9"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -180,10 +180,13 @@
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wxw-yu-RPb">
                         <rect key="frame" x="285" y="4" width="167" height="32"/>
-                        <buttonCell key="cell" type="push" title="View full instructions" bezelStyle="rounded" alignment="center" enabled="NO" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="748-dy-u1T">
+                        <buttonCell key="cell" type="push" title="View full instructions" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="748-dy-u1T">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="ButtonHandlerOpenInstructions:" target="Voe-Tx-rLC" id="GcE-Fd-hae"/>
+                        </connections>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" id="bOO-9o-A7p">
                         <rect key="frame" x="312" y="257" width="393" height="34"/>
@@ -224,19 +227,22 @@
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" id="FXv-yj-Mqz">
                         <rect key="frame" x="312" y="74" width="393" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Prints out instructions about what to do next" id="1PU-Ak-hAc">
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Open the instructions about what to do next" id="1PU-Ak-hAc">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" id="0O1-GB-thV">
-                        <rect key="frame" x="148" y="65" width="145" height="32"/>
+                        <rect key="frame" x="146" y="65" width="150" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="push" title="Print Instructions" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JFh-OD-up7">
+                        <buttonCell key="cell" type="push" title="Open Instructions" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JFh-OD-up7">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="ButtonHandlerOpenInstructions:" target="Voe-Tx-rLC" id="fuz-ha-Ves"/>
+                        </connections>
                     </button>
                     <button verticalHuggingPriority="750" id="BPC-lw-voi">
                         <rect key="frame" x="148" y="336" width="102" height="32"/>

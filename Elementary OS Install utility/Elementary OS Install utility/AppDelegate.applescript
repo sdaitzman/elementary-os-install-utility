@@ -27,8 +27,8 @@ script AppDelegate
 		partitionMac()
 		installRefind()
 		mkFrugalInstaller()
-		display dialog "It's now safe to reboot your computer and install Elementary OS - click OK to print instructions"
-		printInstructions()
+		display dialog "It's now safe to reboot your computer and install Elementary OS - click OK to open the instructions. You should print them if you aren't familiar with the process!"
+		openInstructions()
 	end ButtonHandlerInstallAll_
 	
 	-- partitions the Mac with space for Elementary OS
@@ -72,11 +72,15 @@ script AppDelegate
 		do shell script "open http://elementaryos.org/support"
 	end ButtonHandlerSupport_
 	
+	-- open instructions and app guide
+	on ButtonHandlerOpenInstructions_(sender)
+		openInstructions()
+	end ButtonHandleropenInstructions_
+	
 	-- quit install utility
 	on ButtonHandlerQuit_(sender)
 		quit
 	end ButtonHandlerQuit_
-	
 	on applicationShouldTerminate_(sender)
 		-- Insert code here to do any housekeeping before your application quits
 		do shell script "rm -rf ~/eosinstall"
@@ -202,10 +206,13 @@ script AppDelegate
 		do shell script "diskutil unmount force /Volumes/elementary\\ OS"
 	end mkFrugalInstaller
 		
-	-- print complete instructions
-	on printInstructions()
-			
-	end printInstructions
+	-- open complete instructions
+	on openInstructions()
+		tell application "Safari"
+			activate
+			open location "https://gitprint.com/sdaitzman/elementary-os-install-utility/blob/master/INSTRUCTIONS.md"
+		end tell
+	end openInstructions
 		
 		
 		

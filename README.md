@@ -1,62 +1,72 @@
-:penguin: Elementary OS Install utility
-=============================
+# Elementary OS Install utility
 
-Easy-to-use utility that installs [Elementary OS](http://elementaryos.org) on your Mac and helps you boot it
+Easy-to-use utility that installs [Elementary OS](http://elementaryos.org) on your Mac and helps you boot it.
+This file references Install Elementary OS Utility version 6.0.2
+![Screenshot](http://f.cl.ly/items/393Y071E1W1G3z0s190M/Screen%20Shot%202014-09-04%20at%203.54.11%20PM.png)
+## Instructions
+See [INSTRUCTIONS.md](INSTRUCTIONS.md)
+## App Guide:
 
-## Instructions:
-1. [Download](https://github.com/sdaitzman/elementary-os-install-utility/releases/download/3.2.0beta/Elementary-OS-Install-utility.app.zip)
-2. Open
-3. Follow the instructions :smile:
+Elementary OS Install Utility is divided into four main functions. These
+four functions will prepare your Mac for Elementary OS. The "Full
+install” button partitions your computer with space for Elementary and
+the installer, installs the boot picker, adds the Elementary installer,
+and offers to show the complete instructions.
 
-## Screenshot:
-![screenshot](http://f.cl.ly/items/0x370S1h0U2X2U0K1r1u/Screen%20Shot%202014-08-16%20at%2010.24.31%20PM.png)
+### Partition
+
+Before installing Elementary OS, you’ll need to give it a place to
+install to. This step shrinks your Mac partition, and adds an empty
+partition for Elementary OS and an empty partition for the Elementary OS
+Installer. You should not perform this step multiple times; if your Mac
+is partitioned already and you’d like to remove the partitions, you
+should use Disk Utility.
+
+### Install Boot picker
+
+When you turn on your Mac, the boot picker will ask you whether you want
+to boot Elementary OS or OS X. If you’ve already installed the boot
+picker, it’ll upgrade it to the latest version. If you stop seeing the
+boot picker (for example, after updating your Mac) hold the option key
+while booting, boot into OS X, open this app and run this step again.
+
+### Add installer
+
+You’ll need an Elementary OS ISO file downloaded from the [Elementary
+OS](http://elementaryos.org) website. The ISO file must be at least version Freya (0.3). This
+step must be run after partitioning; it will put the installer onto the
+Elementary OS installer partition.
+
+### Erase installer
+
+This step will remove the installer created in the “Add installer” step
+and format the partition so you don’t see the option to install
+Elementary OS every time you turn on your Mac.
 
 ## Building from source:
-Should support OOTB building from source using Xcode 6 Beta 6 on OS X Yosemite or Mavericks most versions.
 
-## What it does:
-This utility helps you install Elementary OS on a Mac. It installs rEFInd (an EFI boot picker) to the EFI System Partition, and burns a thumb drive with the Elementary OS installer.
+Should support OOTB building from source using Xcode ≥6 - sometimes works in >6 but not reliably.
 
-You'll need an Elementary OS ISO from the Elementary OS [website](http://elementaryos.org) to install, and you'll need to make a FAT partition using Disk Utility. This will be documented in the greyed out button at the bottom of the app but instructions have not yet been written.
+The built app has been tested for OS X ≥10.9
 
 ## Credits:
-See HUMANS.md
+
+See HUMANS.txt
 
 ## Technical Details:
-Elementary OS Install Utility is a Cocoa-Applescript App created using Xcode. It uses mostly shell scripts to perform its tasks.
 
-### Thumb drive burner:
-1. Prompts user to choose an ISO file
-2. Erases eosinstall directory then makes it again (just in case it got left behind)
-3. Converts ISO to IMG in eosinstall file
-4. Renames from DMG to IMG (Apple is weird sometimes)
-5. Prompts for thumb drive then asks Finder about all drives
-6. Lets user choose drive by name and uses ~~grep~~ magic to find /dev/rdiskn location of thumb drive
-7. Uses dd to flash IMG onto thumb drive
-8. Deletes IMG file and eosinstall folder
-9. :smile:
-
-### rEFInd Install:
-1. Tells you what it'll do
-2. Erases eosinstall directory then makes it again (just in case it got left behind)
-3. `curl`s rEFInd from sourceforge into eosinstall directory
-4. Unzips then deletes zip file
-5. Tells you rEFInd has been downloaded and unzipped
-6. Unzips rEFInd binary package
-7. Unmounts both common EFI System Partition mount points (`/Volumes/ESP` and `/Volumes/EFI`) in case they're already mounted
-8. Mounts EFI partition (disk0s1) to `/Volumes/EFI`
-9. Renames bootx64.efi in BOOT folder as refind_x64.efi, and BOOT folder as refind - this step is in case it's already installed. It will allow installations to be upgraded.
-10. Runs rEFInd install script with all drivers onto ESP partition
-11. Deletes rEFInd binary installer folder
-12. Renames refind folder as BOOT and refind_x64.efi as bootx64.efi. This step often reduces boot time on some EFI systems, namely most Macs, by ≈30-40 seconds.
-13. Deletes entire eosinstall folder
-14. Unmounts both common EFI System Partition mount points
-15. Tells the user it's finished :smile:
+Elementary OS Install Utility is a Cocoa-Applescript App created using
+Xcode. It uses mostly shell scripts to perform its tasks. An upcoming port to Python is planned - contact samuel@daitzman.com if you are interested :)
 
 ## Boring stuff:
-This tool is licensed under the file contained in LICENSE.md. The following non-legalese does not represent a contract and LICENSE.md takes priority:
 
-I will not prosecute, sue, or send grumpy emails to anyone using any part of this project for a fully open-source project.
-I ask that you mention me in credits, or your README, or somewhere like that if you do use this.
-If you make money with this, it's cool as long as you've made some changes. You absolutely may not sell this on its own.
-By using this project you surrender your immortal souls, now and forevermore, to Me and Me alone. They shall be claimable within one week of notification by Me or any divine or mortal representative of Me.
+This tool is licensed under the file contained in LICENSE.md. The contents of LICENSE.md take priority over the following non-legalese:
+
+I will not prosecute, sue, or send grumpy emails to anyone using any
+part of this project for a fully open-source project. I ask that you
+mention me in credits, or your README, or somewhere like that if you do
+use this. If you make money with this, it's cool as long as you've made
+some changes. You absolutely may not sell this on its own. By using this
+project you surrender your immortal souls, now and forevermore, to Me
+and Me alone. They shall be claimable within one week of notification by
+Me or any divine or mortal representative of Me.
