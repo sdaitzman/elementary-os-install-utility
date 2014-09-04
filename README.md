@@ -11,7 +11,7 @@ Elementary OS Install Utility is divided into four main functions. These
 four functions will prepare your Mac for Elementary OS. The "Full
 install” button partitions your computer with space for Elementary and
 the installer, installs the boot picker, adds the Elementary installer,
-and offers to print these instructions.
+and offers to show the complete instructions.
 
 ### Partition
 
@@ -56,13 +56,11 @@ See HUMANS.txt
 ## Technical Details:
 
 Elementary OS Install Utility is a Cocoa-Applescript App created using
-Xcode. It uses mostly shell scripts to perform its tasks.
+Xcode. It uses mostly shell scripts to perform its tasks. An upcoming port to Python is planned - contact samuel@daitzman.com if you are interested :)
 
 ## Boring stuff:
 
-This tool is licensed under the file contained in LICENSE.md. The
-following non-legalese does not represent a contract and LICENSE.md
-takes priority:
+This tool is licensed under the file contained in LICENSE.md. The contents of LICENSE.md take priority over the following non-legalese:
 
 I will not prosecute, sue, or send grumpy emails to anyone using any
 part of this project for a fully open-source project. I ask that you

@@ -27,6 +27,7 @@ Your Mac must be fairly recent, with a core-i3/i5/i7 processor (64-bit EFI only)
 19. Boot into OS X and launch Elementary OS Install Utility again. Click "Erase installer" and enter your password - this will erase the installer so it never shows up again
 
 ## Troubleshooting
+- If you're unsure if your Mac has 64-bit EFI, type `$ ioreg -l -p IODeviceTree | grep firmware-abi` into the OS X Terminal - if it spits out something along the lines of `firmware-abi" = <"EFI64">` then your EFI is 64-bit!
 - If the boot picker stops showing up (e.g. after updating), launch the app again and click "Install Boot picker" - it should fix this
 - If your computer fails to restart from Elementary OS, hold down the power button for five seconds to force a shutdown - this is a known bug with a fix being worked on
 - If you run into any other issues, please report them! Email samuel@daitzman.com or go to http://github.com/sdaitzman/elementary-os-install-utility and click issues on the right hand side
