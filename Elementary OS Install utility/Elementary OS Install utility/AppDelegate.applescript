@@ -208,7 +208,10 @@ script AppDelegate
 		
 	-- open complete instructions
 	on openInstructions()
-		
+		tell application "Safari"
+			activate
+			open location "https://gitprint.com/sdaitzman/elementary-os-install-utility/blob/master/INSTRUCTIONS.md"
+		end tell
 	end openInstructions
 		
 		

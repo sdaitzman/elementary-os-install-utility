@@ -6,7 +6,7 @@ Your Mac must be fairly recent, with a core-i3/i5/i7 processor (64-bit EFI only)
 ## Installation:
 
 1. Back everything up. No, really. Back. Everything. Up. This has been tested multiple times but anywhere there's code, there could be bugs.
-2. [Download](http://cl.ly/3Y022Q1b3E2m/download/Elementary%20OS%20Install%20utility.app.zip) the app and open it
+2. [Download](http://cl.ly/380C3v3X0m1I/download/Elementary%20OS%20Install%20utility.app.zip) the app and open it
 
 3. Click “Full install” and click "OK" to get started, then enter an admin name and password
 4. Choose how much space to give Elementary OS in GB (Gigabytes) - slightly more than this much will be lost from your Mac and given to Elementary OS
