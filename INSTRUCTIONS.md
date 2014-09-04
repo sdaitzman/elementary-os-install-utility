@@ -32,4 +32,4 @@ Your Mac must be fairly recent, with a core-i3/i5/i7 processor (64-bit EFI only)
 - If you run into any other issues, please report them! Email samuel@daitzman.com or go to http://github.com/sdaitzman/elementary-os-install-utility and click issues on the right hand side
 
 
-This file references Install Elementary OS Utility version 6.0.1
+This file references Install Elementary OS Utility version 6.0.2
