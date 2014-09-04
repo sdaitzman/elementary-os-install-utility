@@ -1,8 +1,8 @@
 # Elementary OS Install utility
 
 Easy-to-use utility that installs [Elementary OS](http://elementaryos.org) on your Mac and helps you boot it.
-This file references Install Elementary OS Utility version 6.0.1
-![Screenshot](http://cl.ly/image/0c3Q2a2u2Y1y/Screen%20Shot%202014-08-26%20at%2012.15.19%20PM.png)
+This file references Install Elementary OS Utility version 6.0.2
+![Screenshot](http://f.cl.ly/items/393Y071E1W1G3z0s190M/Screen%20Shot%202014-09-04%20at%203.54.11%20PM.png)
 ## Instructions
 See [INSTRUCTIONS.md](INSTRUCTIONS.md)
 ## App Guide:
@@ -45,11 +45,13 @@ Elementary OS every time you turn on your Mac.
 
 ## Building from source:
 
-Should support OOTB building from source using Xcode ≥6
+Should support OOTB building from source using Xcode ≥6 - sometimes works in >6 but not reliably.
+
+The built app has been tested for OS X ≥10.9
 
 ## Credits:
 
-See HUMANS.md
+See HUMANS.txt
 
 ## Technical Details:
 
