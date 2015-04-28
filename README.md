@@ -70,3 +70,7 @@ some changes. You absolutely may not sell this on its own. By using this
 project you surrender your immortal souls, now and forevermore, to Me
 and Me alone. They shall be claimable within one week of notification by
 Me or any divine or mortal representative of Me.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/sdaitzman/elementary-os-install-utility/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
