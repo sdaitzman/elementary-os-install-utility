@@ -1,6 +1,6 @@
 # Elementary OS Install utility
 
-*** TO RUN THIS TOOL YOU WILL NEED SYSTEM INTEGRITY PROTECTION DISABLED ***
+***TO RUN THIS TOOL YOU WILL NEED SYSTEM INTEGRITY PROTECTION DISABLED***
 
 Easy-to-use utility that installs [Elementary OS](http://elementaryos.org) on your Mac and helps you boot it.
 This file references Install Elementary OS Utility version 6.0.2 which can be downloaded [here](http://cl.ly/380C3v3X0m1I/download/Elementary%20OS%20Install%20utility.app.zip). This tool is heavily based on [@aroman](http://github.com/aroman)'s manual [freya-on-a-mac](http://github.com/aroman/freya-on-a-mac) guide.
