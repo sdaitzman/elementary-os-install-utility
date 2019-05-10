@@ -1,5 +1,7 @@
 # Elementary OS Install utility
 
+*** This tool is kept around for historical purposes. It is no longer maintained. ***
+
 ***TO RUN THIS TOOL YOU WILL NEED SYSTEM INTEGRITY PROTECTION DISABLED***
 
 Easy-to-use utility that installs [Elementary OS](http://elementaryos.org) on your Mac and helps you boot it.
